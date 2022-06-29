@@ -14,7 +14,7 @@ public class LogInTest extends BaseTest {
     public void userLoginValidCredential() {
         logInPage.open();
         logInPage.login("standard_user", "secret_sauce");
-        assertTrue(driver.findElement(By.cssSelector(".title")).isDisplayed(), "Юзер не прошёл!");
+        assertTrue(productsPage.getTitle().isDisplayed(), "Юзер не прошёл!");
     }
 
     @Test

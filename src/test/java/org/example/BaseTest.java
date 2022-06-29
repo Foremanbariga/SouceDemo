@@ -2,6 +2,7 @@ package org.example;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.example.pages.LogInPage;
+import org.example.pages.ProductsPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chromium.ChromiumDriver;
@@ -14,6 +15,7 @@ public class BaseTest {
 
     WebDriver driver;
     LogInPage logInPage;
+    ProductsPage productsPage;
 
     @BeforeMethod
     public void setUp() {
@@ -25,6 +27,7 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         //Создание страниц
         logInPage = new LogInPage(driver);
+        productsPage = new ProductsPage(driver);
     }
 
     @AfterMethod(alwaysRun = true)

@@ -4,18 +4,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 
-public class LogInPage {
+public class LogInPage extends BasePage {
 
 
-    WebDriver driver;
-
-    private final By userNameinput = By.id("user-name");
-    private final By passwordInput = By.id("password");
-    private final By loginButton = By.id("login-button");
+    private final By USER_NAME_INPUT = By.id("user-name");
+    private final By PASSWORD_INPUT = By.id("password");
+    private final By LOGIN_BUTTON = By.id("login-button");
     private final By error = By.cssSelector("h3[data-test=error]");
 
     public LogInPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public void open() {
@@ -23,9 +21,9 @@ public class LogInPage {
     }
 
     public void login(String user, String password) {
-        driver.findElement(userNameinput).sendKeys(user);
-        driver.findElement(passwordInput).sendKeys(password);
-        driver.findElement(loginButton).submit();
+        driver.findElement(USER_NAME_INPUT).sendKeys(user);
+        driver.findElement(PASSWORD_INPUT).sendKeys(password);
+        driver.findElement(LOGIN_BUTTON).submit();
     }
 
     public String getError(){
