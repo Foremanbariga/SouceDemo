@@ -17,13 +17,19 @@ public class LogInPage extends BasePage {
     }
 
     public void open() {
-        driver.get("http://www.saucedemo.com/");
+
+        driver.get(BASE_URL);
     }
 
     public void login(String user, String password) {
         driver.findElement(USER_NAME_INPUT).sendKeys(user);
         driver.findElement(PASSWORD_INPUT).sendKeys(password);
         driver.findElement(LOGIN_BUTTON).submit();
+    }
+
+    public void loginValidUser() {
+        login("standart_user", "secret_sauce");
+
     }
 
     public String getError(){
