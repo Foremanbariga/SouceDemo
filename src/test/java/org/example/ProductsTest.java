@@ -7,8 +7,8 @@ public class ProductsTest extends BaseTest {
     @Test
     public void productsAddedCart() {
         logInPage.open();
-        logInPage.loginValidUser();
-        productsPage.open();
-        productsPage.setAddCartButton("");
+        logInPage.loginAsValidUser();
+//        productsPage.open();
+        productsPage.addCart("Sauce Labs Backpack");
     }
 }

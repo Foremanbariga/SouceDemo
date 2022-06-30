@@ -17,7 +17,6 @@ public class LogInPage extends BasePage {
     }
 
     public void open() {
-
         driver.get(BASE_URL);
     }
 
@@ -27,9 +26,8 @@ public class LogInPage extends BasePage {
         driver.findElement(LOGIN_BUTTON).submit();
     }
 
-    public void loginValidUser() {
-        login("standart_user", "secret_sauce");
-
+    public void loginAsValidUser() {
+        login("standard_user", "secret_sauce");
     }
 
     public String getError(){
