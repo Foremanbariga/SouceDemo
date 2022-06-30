@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class ProductsPage extends BasePage{
+public class ProductsPage extends BasePage {
 
 
     private final By TITLE = By.cssSelector(".title");
@@ -19,10 +19,11 @@ public class ProductsPage extends BasePage{
     }
 
     public WebElement getTitle() {
+
         return driver.findElement(TITLE);
     }
 
-    public void setAddCartButton(String productName) {
+    public void addCart(String productName) {
     By fulllocator = By.xpath(String.format(addCartButton, productName));
     driver.findElement(fulllocator).click();
     }
